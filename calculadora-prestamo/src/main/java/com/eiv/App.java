@@ -1,4 +1,4 @@
-package com.eiv.calculadoraprestamo;
+package com.eiv;
 
 
 
