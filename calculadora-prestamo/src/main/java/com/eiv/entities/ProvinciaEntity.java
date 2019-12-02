@@ -21,6 +21,9 @@ public class ProvinciaEntity {
     @Column(name = "region", nullable = false,length = 3)
     private RegionEnum region;
 
+    public ProvinciaEntity() {
+        
+    }
     
     public ProvinciaEntity(Integer id, String nombre) {
         super();
@@ -52,7 +55,7 @@ public class ProvinciaEntity {
         this.region = region;
     }
     
-     @Override
+    @Override
     public String toString() {
         return "ProvinciaEntity [id=" + id + ", nombre=" + nombre + "]";
     }
