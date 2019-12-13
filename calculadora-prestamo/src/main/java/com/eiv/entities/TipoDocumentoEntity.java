@@ -12,7 +12,7 @@ public class TipoDocumentoEntity {
     
     @Id
     @Column(name = "id_tipodocumento", nullable = false)
-    private Integer id;
+    private Long id;
     
     @Column(name = "nombre", nullable = false, length = 200)
     private String nombre;
@@ -27,16 +27,16 @@ public class TipoDocumentoEntity {
         
     }
     
-    public TipoDocumentoEntity(Integer id) {
+    public TipoDocumentoEntity(Long id) {
         super();
         this.id = id;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -63,6 +63,7 @@ public class TipoDocumentoEntity {
     public void setValidarComoCuit(Boolean validarComoCuit) {
         this.validarComoCuit = validarComoCuit;
     }
+
 
     @Override
     public int hashCode() {

@@ -26,16 +26,16 @@ public class PrestamoEntity {
     @JoinColumn(name = "linea_id",referencedColumnName = "linea_id", nullable = false)
     private LineaEntity linea;
     
-    @OneToOne
-    @JoinColumns({
-                @JoinColumn(
-                name = "usuario_tipo_documento", referencedColumnName = "id_tipodocumento", 
-                nullable = false),
-                @JoinColumn(
-                name = "usuario_numero_documento", referencedColumnName = "numero_documento", 
-                nullable = false) })
-    private UsuarioEntity usuario;
-    
+//    @OneToOne
+//    @JoinColumns({
+//                @JoinColumn(
+//                name = "usuario_tipo_documento", referencedColumnName = "id_tipodocumento", 
+//                nullable = false),
+//                @JoinColumn(
+//                name = "usuario_numero_documento", referencedColumnName = "numero_documento", 
+//                nullable = false) })
+//    private UsuarioEntity usuario;
+//    
     @Column(name = "tea", nullable = false)
             private BigDecimal tea;
     
@@ -72,13 +72,13 @@ public class PrestamoEntity {
         this.linea = linea;
     }
 
-    public UsuarioEntity getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(UsuarioEntity usuario) {
-        this.usuario = usuario;
-    }
+//    public UsuarioEntity getUsuario() {
+//        return usuario;
+//    }
+//
+//    public void setUsuario(UsuarioEntity usuario) {
+//        this.usuario = usuario;
+//    }
 
     public BigDecimal getTea() {
         return tea;

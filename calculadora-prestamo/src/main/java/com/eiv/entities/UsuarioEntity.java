@@ -5,26 +5,26 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "usuarios")
+//@Entity
+//@Table(name = "usuarios")
 public class UsuarioEntity {
 
-    @EmbeddedId
+    //@EmbeddedId
     private PersonaPkEntity pk;
-    
-    @Column(name = "nombre_usuario", nullable = false, length = 50)
+
+    //@Column(name = "nombre_usuario", nullable = false, length = 50)
     private String nombreUsuario;
-    
-    @Column(name = "hashed_pwd", nullable = false, length = 200)
+
+    //@Column(name = "hashed_pwd", nullable = false, length = 200)
     private String password;
 
     public UsuarioEntity() {
-        this.pk = new  PersonaPkEntity();
+
     }
-    
-    public UsuarioEntity(PersonaPkEntity pk, String nombreUsuario, String password) {
+
+    public UsuarioEntity(String nombreUsuario, String password) {
         super();
-        this.pk = pk;
+        this.pk = new PersonaPkEntity();
         this.nombreUsuario = nombreUsuario;
         this.password = password;
     }
@@ -87,6 +87,5 @@ public class UsuarioEntity {
     public String toString() {
         return "UsuariosEntity [pk=" + pk + ", nombreUsuario=" + nombreUsuario + "]";
     }
-    
-    
+
 }

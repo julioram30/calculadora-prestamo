@@ -19,11 +19,12 @@ public class PrestamoCuotaEntity {
     @OneToOne
     @JoinColumn(name = "prestamo_id", referencedColumnName = "prestamo_id", 
             nullable = false, insertable = false, updatable = false)
+    private PrestamoEntity prestamoEntity;
     
-    @Column(name = "nro_cuota", nullable = false)
+    @Column(name = "nro_cuota", nullable = false, insertable = false, updatable = false)
     private Integer id;
     
-    @Column(name = "prestamo_id", nullable = false)
+    @Column(name = "prestamo_id", nullable = false, insertable = false, updatable = false)
     private Integer numeroPrestamo;
     
     @Column(name = "importe_capital", nullable = false)
