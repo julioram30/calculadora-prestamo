@@ -52,16 +52,17 @@ public class TipoDocumentoServiceIT {
         
         TipoDocumentoEntity tipoDocumentoEntity = tipoDocumentoService.save(tipoDocumento);
         
+        Optional<TipoDocumentoEntity> esperado = tipoDocumentoService
+                .findById(tipoDocumentoEntity.getId());
+        assertThat(esperado).isNotEmpty();
+        assertThat(esperado.get()).isEqualTo(tipoDocumentoEntity);
+        
         assertThat(tipoDocumentoEntity.getId()).isEqualTo(1L);
         assertThat(tipoDocumentoEntity.getNombre()).isEqualTo(tipoDocumento.getNombre());
         assertThat(tipoDocumentoEntity.getAbreviatura()).isEqualTo(tipoDocumento.getAbreviatura());
         assertThat(tipoDocumentoEntity.getValidarComoCuit())
             .isEqualTo(tipoDocumento.getValidarComoCuit());
         
-        Optional<TipoDocumentoEntity> esperado = tipoDocumentoService
-                .findById(tipoDocumentoEntity.getId());
-        assertThat(esperado).isNotEmpty();
-        assertThat(esperado.get()).isEqualTo(tipoDocumentoEntity);
         
     
     }

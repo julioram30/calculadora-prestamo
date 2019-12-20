@@ -11,34 +11,33 @@ public class PersonaPkEntity implements Serializable {
     private static final long serialVersionUID = 1L;
     
     @Column(name = "id_tipodocumento", nullable = false, unique = true)
-    private TipoDocumentoEntity tipoDocumento;
+    private Long tipoDocumentoId;
     
     @Column(name = "numero_documento",nullable = false,unique = true)
-    private Integer numeroDocumento;
+    private Long numeroDocumento;
 
     public PersonaPkEntity() {
-        
     }
     
-    public PersonaPkEntity(TipoDocumentoEntity tipoDocumento, Integer numeroDocumento) {
+    public PersonaPkEntity(TipoDocumentoEntity tipoDocumento, Long numeroDocumento) {
         super();
-        this.tipoDocumento = tipoDocumento;
+        this.tipoDocumentoId = tipoDocumento.getId();
         this.numeroDocumento = numeroDocumento;
     }
 
-    public TipoDocumentoEntity getTipoDocumento() {
-        return tipoDocumento;
+    public Long getTipoDocumentoId() {
+        return tipoDocumentoId;
     }
 
-    public void setTipoDocumento(TipoDocumentoEntity tipoDocumento) {
-        this.tipoDocumento = tipoDocumento;
+    public void setTipoDocumentoId(Long tipoDocumentoId) {
+        this.tipoDocumentoId = tipoDocumentoId;
     }
 
-    public Integer getNumeroDocumento() {
+    public Long getNumeroDocumento() {
         return numeroDocumento;
     }
 
-    public void setNumeroDocumento(Integer numeroDocumento) {
+    public void setNumeroDocumento(Long numeroDocumento) {
         this.numeroDocumento = numeroDocumento;
     }
 
@@ -51,7 +50,7 @@ public class PersonaPkEntity implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((numeroDocumento == null) ? 0 : numeroDocumento.hashCode());
-        result = prime * result + ((tipoDocumento == null) ? 0 : tipoDocumento.hashCode());
+        result = prime * result + ((tipoDocumentoId == null) ? 0 : tipoDocumentoId.hashCode());
         return result;
     }
 
@@ -74,11 +73,11 @@ public class PersonaPkEntity implements Serializable {
         } else if (!numeroDocumento.equals(other.numeroDocumento)) {
             return false;
         }
-        if (tipoDocumento == null) {
-            if (other.tipoDocumento != null) {
+        if (tipoDocumentoId == null) {
+            if (other.tipoDocumentoId != null) {
                 return false;
             }
-        } else if (!tipoDocumento.equals(other.tipoDocumento)) {
+        } else if (!tipoDocumentoId.equals(other.tipoDocumentoId)) {
             return false;
         }
         return true;
@@ -86,9 +85,10 @@ public class PersonaPkEntity implements Serializable {
 
     @Override
     public String toString() {
-        return "PersonaPkEntity [tipoDocumento=" + tipoDocumento + ", numeroDocumento=" 
-                + numeroDocumento + "]";
+        return "PersonaPkEntity [tipoDocumentoId=" + tipoDocumentoId 
+                + ", numeroDocumento=" + numeroDocumento + "]";
     }
-    
+
+        
     
 }

@@ -5,21 +5,20 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-//@Entity
-//@Table(name = "usuarios")
+@Entity
+@Table(name = "usuarios")
 public class UsuarioEntity {
 
-    //@EmbeddedId
+    @EmbeddedId
     private PersonaPkEntity pk;
 
-    //@Column(name = "nombre_usuario", nullable = false, length = 50)
+    @Column(name = "nombre_usuario", nullable = false, length = 50)
     private String nombreUsuario;
 
-    //@Column(name = "hashed_pwd", nullable = false, length = 200)
+    @Column(name = "hashed_pwd", nullable = false, length = 200)
     private String password;
 
     public UsuarioEntity() {
-
     }
 
     public UsuarioEntity(String nombreUsuario, String password) {

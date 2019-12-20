@@ -41,13 +41,14 @@ public class TipoDocumentoService {
     public TipoDocumentoEntity save(TipoDocumento tipoDocumento) {
         
         TipoDocumentoEntity tipoDocumentoEntity = new TipoDocumentoEntity();
+        tipoDocumentoEntity.setId(id);
         tipoDocumentoEntity.setNombre(tipoDocumento.getNombre());
         tipoDocumentoEntity.setAbreviatura(tipoDocumento.getAbreviatura());
         tipoDocumentoEntity.setValidarComoCuit(tipoDocumento.getValidarComoCuit());
         
         tipoDocumentoRepository.save(tipoDocumentoEntity);
         
-        //        tipoDocumentoEntity.setId(id);
+        
         
         return tipoDocumentoEntity;
     }
